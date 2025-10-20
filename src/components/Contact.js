@@ -154,7 +154,7 @@ export default function Contact() {
               <div className="space-y-4">
                 <div>
                   <span className="text-sm font-medium text-gray-600">Current Status</span>
-                  <p className="text-green-600 font-semibold">Available for Work</p>
+                  <p className="text-green-600 font-semibold">Available for Work </p>
                 </div>
                 <div>
                   <span className="text-sm font-medium text-gray-600">Response Time</span>
