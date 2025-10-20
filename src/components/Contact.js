@@ -101,7 +101,7 @@ export default function Contact() {
 
             {/* Connect With Me */}
             <div>
-              <h3 className="text-2xl font-bold mb-6 text-gray-900">Connect With Me</h3>
+              <h3 className="text-2xl font-bold mb-6 text-gray-900">Connect With Us</h3>
               <div className="flex space-x-4">
                 <a
                   href="#"
