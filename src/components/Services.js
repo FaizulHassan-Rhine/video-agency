@@ -3,28 +3,28 @@ import { Camera, Scissors, Palette, Music } from 'lucide-react';
 export default function Services() {
   const services = [
     {
-      icon: Camera,
-      title: "Video Production",
-      description: "Complete video production from concept to final delivery, including filming and post-production.",
-      features: ["Concept Development", "Professional Filming", "Post-Production", "Final Delivery"]
-    },
-    {
       icon: Scissors,
       title: "Video Editing",
-      description: "Professional video editing services with cutting-edge technology and creative expertise.",
-      features: ["Raw Footage Editing", "Color Grading", "Motion Graphics", "Audio Sync"]
+      description: "Premium wedding video editing crafted with emotion, precision, and storytelling.",
+      features: ["Raw Footage Editing", "Highlight & Teaser Edit", "Documentary Edit", "Audio Sync"]
     },
     {
       icon: Palette,
+      title: "Color Grading",
+      description: "Professional cinematic color grading to enhance mood, warmth, and emotion in every frame.",
+      features: ["Wedding Film Color Tone", "Skin Tone Enhancement", "Cinematic Looks"]
+    },
+    {
+      icon: Camera,
       title: "Motion Graphics",
-      description: "Dynamic motion graphics and visual effects to enhance your video content.",
-      features: ["Logo Animations", "Title Sequences", "Visual Effects", "3D Graphics"]
+      description: "Beautiful visuals and animated elements to elevate your wedding film.",
+      features: ["Title Animations", "Stylish Lower Thirds", "Visual Effects (Subtle & Clean)"]
     },
     {
       icon: Music,
       title: "Audio Production",
-      description: "Professional audio editing, mixing, and sound design for your video projects.",
-      features: ["Audio Editing", "Sound Mixing", "Voice Over", "Music Scoring"]
+      description: "Professional sound work to ensure your film feels as magical as it looks.",
+      features: ["Audio Cleanup & Mixing", "Music Alignment", "Voice Enhancement"]
     }
   ];
 
@@ -34,7 +34,7 @@ export default function Services() {
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold mb-6">What We Do</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            We offer comprehensive video editing services to bring your creative vision to life
+          We offer professional wedding-focused editing services to preserve your most beautiful moments with cinematic elegance.
           </p>
         </div>
 

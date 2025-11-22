@@ -87,7 +87,7 @@ export default function VideoModal({ isOpen, onClose, videoUrl, title }) {
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors z-10"
+          className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors z-10 cursor-pointer"
         >
           <X className="h-8 w-8" />
         </button>
@@ -98,7 +98,7 @@ export default function VideoModal({ isOpen, onClose, videoUrl, title }) {
             <video
               ref={setVideoRef}
               src={videoUrl}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover cursor-pointer"
               onClick={handleVideoClick}
               onPlay={() => setIsPlaying(true)}
               onPause={() => setIsPlaying(false)}
@@ -110,7 +110,7 @@ export default function VideoModal({ isOpen, onClose, videoUrl, title }) {
             <div className="absolute inset-0 flex items-center justify-center">
               <button
                 onClick={togglePlay}
-                className="bg-black/50 hover:bg-black/70 rounded-full p-4 transition-colors"
+                className="bg-black/50 hover:bg-black/70 rounded-full p-4 transition-colors cursor-pointer"
               >
                 {isPlaying ? (
                   <Pause className="h-12 w-12 text-white" />
@@ -125,7 +125,7 @@ export default function VideoModal({ isOpen, onClose, videoUrl, title }) {
               <div className="flex items-center space-x-3">
                 <button
                   onClick={toggleMute}
-                  className="bg-black/50 hover:bg-black/70 rounded-full p-2 transition-colors"
+                  className="bg-black/50 hover:bg-black/70 rounded-full p-2 transition-colors cursor-pointer"
                 >
                   {isMuted ? (
                     <VolumeX className="h-5 w-5 text-white" />
@@ -147,7 +147,7 @@ export default function VideoModal({ isOpen, onClose, videoUrl, title }) {
 
         {/* Click outside to close */}
         <div
-          className="absolute inset-0 -z-10"
+          className="absolute inset-0 -z-10 cursor-pointer"
           onClick={onClose}
         />
       </div>

@@ -1,13 +1,11 @@
-import { Play, Facebook, Twitter, Instagram, Youtube, Linkedin, Github } from 'lucide-react';
+import { Play, Facebook, Instagram, Youtube, MessageCircle } from 'lucide-react';
 
 export default function Footer() {
   const socialLinks = [
-    { icon: Linkedin, label: "LinkedIn", href: "#", color: "text-blue-500 hover:text-blue-700" },
-    { icon: Github, label: "GitHub", href: "#", color: "text-gray-700 hover:text-gray-900" },
-    { icon: Twitter, label: "Twitter", href: "#", color: "text-blue-400 hover:text-blue-600" },
-    { icon: Youtube, label: "YouTube", href: "#", color: "text-red-500 hover:text-red-700" },
-    { icon: Instagram, label: "Instagram", href: "#", color: "text-pink-500 hover:text-pink-700" },
-    { icon: Facebook, label: "Facebook", href: "#", color: "text-blue-600 hover:text-blue-800" }
+    { icon: MessageCircle, label: "WhatsApp", href: "https://wa.me/8801346365406", color: "text-green-500 hover:text-green-700" },
+    { icon: Youtube, label: "YouTube", href: "https://www.youtube.com/channel/UCluT7plZtYE3_z48KG5SqcA", color: "text-red-500 hover:text-red-700" },
+    { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/filmscutstudio?igsh=MXhnMGhzNXZjZG1udA%3D%3D&utm_source=qr", color: "text-pink-500 hover:text-pink-700" },
+    { icon: Facebook, label: "Facebook", href: "https://www.facebook.com/people/Films-Cut-Studio/61555193196350/", color: "text-blue-600 hover:text-blue-800" }
   ];
 
   return (
@@ -16,13 +14,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Logo and Description */}
           <div className="space-y-4">
-            <div className="flex items-center space-x-2">
-              <Play className="h-8 w-8 text-red-500" />
-              <span className="text-xl font-bold">VideoCraft</span>
+            <div className="">
+              <img src="/images/logo.png" alt="Logo" className="h-16 w-32" />
+
             </div>
-            <p className="text-gray-600 max-w-md">
-              Professional video editing services that transform your vision into stunning visual stories. 
-              We specialize in creating compelling content that engages and inspires your audience.
+            <p className="text-gray-600 w-full">
+              We turn your wedding moments into timeless, emotional films crafted with care and artistry.
+              At Films Cut Studio, our professional team transforms every memory into a beautifully crafted story,
+              delivering premium-quality edits where every frame holds a feeling worth remembering.
             </p>
           </div>
 
@@ -36,7 +35,9 @@ export default function Footer() {
                   <a
                     key={index}
                     href={social.href}
-                    className="w-10 h-10 hover:bg-gray-100 rounded-lg flex items-center justify-center transition-colors"
+                    target={social.href !== "#" ? "_blank" : undefined}
+                    rel={social.href !== "#" ? "noopener noreferrer" : undefined}
+                    className="w-10 h-10 hover:bg-gray-100 rounded-lg flex items-center justify-center transition-colors cursor-pointer"
                     aria-label={social.label}
                   >
                     <IconComponent className={`h-5 w-5 ${social.color}`} />
@@ -48,7 +49,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-200 mt-8 pt-8 text-center text-gray-600">
-          <p>&copy; 2025 VideoCraft. All rights reserved. </p>
+          <p>&copy; 2025 <span className="font-bold text-red-500">Films Cut Studio</span> All rights reserved. </p>
         </div>
       </div>
     </footer>

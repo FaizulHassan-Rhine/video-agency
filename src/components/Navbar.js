@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Play, Home, Briefcase, Mail, Menu, X } from 'lucide-react';
+import { Play, Home, Briefcase, Mail, Menu, X, User } from 'lucide-react';
 import Link from 'next/link';
 
 export default function Navbar() {
@@ -48,8 +48,8 @@ export default function Navbar() {
           {/* Logo */}
           <div className="flex items-center">
             <div className="flex items-center space-x-2">
-              <Play className="h-8 w-8 text-red-500" />
-              <span className="text-xl font-bold">VideoCraft</span>
+              <img src="/images/logo.png" alt="Logo" className="h-10 w-20" />
+              
             </div>
           </div>
 
@@ -58,7 +58,7 @@ export default function Navbar() {
             <div className="ml-10 flex items-baseline space-x-8">
               <button
                 onClick={() => scrollToSection('home')}
-                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center gap-2 ${
+                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center gap-2 cursor-pointer ${
                   activeSection === 'home' 
                     ? 'text-red-500 bg-red-500/10' 
                     : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
@@ -69,14 +69,21 @@ export default function Navbar() {
               </button>
               <Link
                 href="/work"
-                className="px-3 py-2 rounded-md text-sm font-medium transition-colors text-gray-600 hover:text-gray-900 hover:bg-gray-100 flex items-center gap-2"
+                className="px-3 py-2 rounded-md text-sm font-medium transition-colors text-gray-600 hover:text-gray-900 hover:bg-gray-100 flex items-center gap-2 cursor-pointer"
               >
                 <Briefcase className="h-4 w-4" />
                 Work
               </Link>
+              <Link
+                href="/about"
+                className="px-3 py-2 rounded-md text-sm font-medium transition-colors text-gray-600 hover:text-gray-900 hover:bg-gray-100 flex items-center gap-2 cursor-pointer"
+              >
+                <User className="h-4 w-4" />
+                About
+              </Link>
               <button
                 onClick={() => scrollToSection('contact')}
-                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center gap-2 ${
+                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center gap-2 cursor-pointer ${
                   activeSection === 'contact' 
                     ? 'text-red-500 bg-red-500/10' 
                     : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
@@ -92,7 +99,7 @@ export default function Navbar() {
           <div className="md:hidden">
             <button
               onClick={toggleMobileMenu}
-              className="p-2 rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-colors"
+              className="p-2 rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-colors cursor-pointer"
               aria-label="Toggle mobile menu"
             >
               {isMobileMenuOpen ? (
@@ -110,7 +117,7 @@ export default function Navbar() {
             <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-200">
               <button
                 onClick={() => scrollToSection('home')}
-                className={`w-full text-left px-3 py-2 rounded-md text-base font-medium transition-colors flex items-center gap-3 ${
+                className={`w-full text-left px-3 py-2 rounded-md text-base font-medium transition-colors flex items-center gap-3 cursor-pointer ${
                   activeSection === 'home' 
                     ? 'text-red-500 bg-red-500/10' 
                     : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
@@ -122,14 +129,22 @@ export default function Navbar() {
               <Link
                 href="/work"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="w-full text-left px-3 py-2 rounded-md text-base font-medium transition-colors text-gray-600 hover:text-gray-900 hover:bg-gray-100 flex items-center gap-3"
+                className="w-full text-left px-3 py-2 rounded-md text-base font-medium transition-colors text-gray-600 hover:text-gray-900 hover:bg-gray-100 flex items-center gap-3 cursor-pointer"
               >
                 <Briefcase className="h-5 w-5" />
                 Work
               </Link>
+              <Link
+                href="/about"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="w-full text-left px-3 py-2 rounded-md text-base font-medium transition-colors text-gray-600 hover:text-gray-900 hover:bg-gray-100 flex items-center gap-3 cursor-pointer"
+              >
+                <User className="h-5 w-5" />
+                About
+              </Link>
               <button
                 onClick={() => scrollToSection('contact')}
-                className={`w-full text-left px-3 py-2 rounded-md text-base font-medium transition-colors flex items-center gap-3 ${
+                className={`w-full text-left px-3 py-2 rounded-md text-base font-medium transition-colors flex items-center gap-3 cursor-pointer ${
                   activeSection === 'contact' 
                     ? 'text-red-500 bg-red-500/10' 
                     : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'

@@ -9,68 +9,42 @@ export default function Portfolio() {
   const [selectedVideo, setSelectedVideo] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const projects = [
+  // Recent Work - First 3 categories
+  const recentProjects = [
     {
-      title: "Corporate Brand Video",
-      description: "A comprehensive brand story video for a tech startup",
-      gradient: "from-red-500/20 to-purple-500/20",
+      title: "Teaser",
+      description: "A short, cinematic glimpse to build anticipation for the full film.",
+      category: "Teaser",
+      gradient: "from-red-500/20 to-pink-500/20",
       videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
       tags: [
-        { text: "Corporate", color: "bg-red-500/20 text-red-400" },
-        { text: "Branding", color: "bg-blue-500/20 text-blue-400" }
+        { text: "Teaser", color: "bg-red-500/20 text-red-400" },
+        { text: "Cinematic", color: "bg-pink-500/20 text-pink-400" }
       ]
     },
     {
-      title: "Music Video",
-      description: "High-energy music video with dynamic editing and effects",
-      gradient: "from-green-500/20 to-blue-500/20",
+      title: "Highlights",
+      description: "The essence of the day, capturing all the key moments in a vibrant, emotional short film.",
+      category: "Highlights",
+      gradient: "from-rose-500/20 to-purple-500/20",
       videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
       tags: [
-        { text: "Music", color: "bg-purple-500/20 text-purple-400" },
-        { text: "Creative", color: "bg-pink-500/20 text-pink-400" }
+        { text: "Highlights", color: "bg-rose-500/20 text-rose-400" },
+        { text: "Emotional", color: "bg-purple-500/20 text-purple-400" }
       ]
     },
     {
-      title: "Documentary Series",
-      description: "Multi-part documentary with cinematic storytelling",
-      gradient: "from-yellow-500/20 to-orange-500/20",
+      title: "Full Documentary",
+      description: "The complete, detailed story of your wedding day, from getting ready to the final dance.",
+      category: "Full Documentary",
+      gradient: "from-orange-500/20 to-red-500/20",
       videoUrl: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
       tags: [
-        { text: "Documentary", color: "bg-green-500/20 text-green-400" },
-        { text: "Cinematic", color: "bg-indigo-500/20 text-indigo-400" }
-      ]
-    },
-    {
-      title: "Social Media Content",
-      description: "Engaging social media videos with viral potential",
-      gradient: "from-cyan-500/20 to-teal-500/20",
-      tags: [
-        { text: "Social Media", color: "bg-cyan-500/20 text-cyan-400" },
-        { text: "Viral", color: "bg-teal-500/20 text-teal-400" }
-      ]
-    },
-    {
-      title: "Wedding Highlights",
-      description: "Beautiful wedding video with emotional storytelling",
-      gradient: "from-rose-500/20 to-pink-500/20",
-      tags: [
-        { text: "Wedding", color: "bg-rose-500/20 text-rose-400" },
-        { text: "Romance", color: "bg-pink-500/20 text-pink-400" }
-      ]
-    },
-    {
-      title: "Product Launch",
-      description: "Exciting product launch video with motion graphics",
-      gradient: "from-violet-500/20 to-purple-500/20",
-      tags: [
-        { text: "Product", color: "bg-violet-500/20 text-violet-400" },
-        { text: "Launch", color: "bg-purple-500/20 text-purple-400" }
+        { text: "Documentary", color: "bg-orange-500/20 text-orange-400" },
+        { text: "Complete Story", color: "bg-red-500/20 text-red-400" }
       ]
     }
   ];
-
-  // Show only first 3 projects
-  const recentProjects = projects.slice(0, 3);
 
   const handleVideoClick = (project) => {
     setSelectedVideo(project);
@@ -88,7 +62,7 @@ export default function Portfolio() {
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold mb-6">Recent Work</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Check out some of our latest video editing projects and creative work
+            Explore our latest wedding films crafted with emotion, precision, and cinematic storytelling
           </p>
         </div>
 
@@ -104,6 +78,11 @@ export default function Portfolio() {
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+                <div className="mb-2">
+                  <span className="text-xs font-semibold text-red-500 uppercase tracking-wide">
+                    {project.category}
+                  </span>
+                </div>
                 <p className="text-gray-600 mb-4">{project.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag, tagIndex) => (
@@ -121,7 +100,7 @@ export default function Portfolio() {
         <div className="text-center">
           <Link 
             href="/work"
-            className="inline-flex items-center gap-2 bg-red-500 hover:bg-red-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors"
+            className="inline-flex items-center gap-2 bg-red-500 hover:bg-red-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors cursor-pointer"
           >
             View All Work
             <ArrowRight className="h-5 w-5" />
